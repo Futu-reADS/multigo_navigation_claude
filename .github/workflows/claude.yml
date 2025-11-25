@@ -37,9 +37,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
-          # See https://code.claude.com/docs/en/settings#tools-available-to-claude
-          allowed_tools: 'Bash,Edit,WebFetch,WebSearch,Write'
-
           # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
@@ -50,4 +47,4 @@ jobs:
           # Optional: Add claude_args to customize behavior and configuration
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
-          # claude_args: '--allowed-tools Bash(gh pr:*)'
+          claude_args: '--allowed-tools Bash(gh pr:*),Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*),Edit,WebFetch,WebSearch,Write'
