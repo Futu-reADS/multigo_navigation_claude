@@ -251,8 +251,16 @@ Sensor N → cloud_callback(N) → Transform → Store[N] ─┴→ timer_callba
 
 ### Voxel Leaf Size Tuning
 - **0.01m:** High detail, slower processing
-- **0.05m:** Balanced (default)
+- **0.05m:** Balanced (default, pcl_merge.cpp:144)
 - **0.10m:** Fast, lower detail
+
+**Voxel Size Trade-offs:** The default 0.05m (5cm) voxel size provides a good balance between point cloud detail and processing performance. This setting:
+- Reduces point count significantly (typical reduction: 70-90% depending on scene complexity)
+- Maintains sufficient detail for navigation and obstacle detection
+- Keeps processing latency within real-time constraints (~10-20ms for typical merged clouds)
+- Preserves geometric features larger than 5cm
+
+For applications requiring finer detail (e.g., precise docking, small object detection), reduce to 0.01-0.03m. For improved performance in less demanding scenarios, increase to 0.08-0.10m.
 
 ### Output Frame Selection
 - **base_link:** Robot-centric (recommended)

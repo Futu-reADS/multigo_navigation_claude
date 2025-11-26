@@ -15,9 +15,11 @@ The `aruco_detect` package provides ArUco marker detection and pose estimation c
 
 ### Marker Detection
 - Real-time ArUco marker detection using OpenCV
-- Configurable dictionary (default: DICT_4X4_50)
+- Dictionary: DICT_6X6_250 (hardcoded in aruco_detect.h:44)
 - Selective detection based on desired marker ID
 - Visual debugging with OpenCV windows showing detected markers
+
+**Note:** The ArUco dictionary is currently hardcoded as `DICT_6X6_250` in the header file and cannot be changed via parameters. To use a different dictionary (e.g., DICT_4X4_50), code modification in `include/aruco_detect/aruco_detect.h` line 44 is required.
 
 ### Pose Estimation
 - 6-DOF pose estimation from single markers

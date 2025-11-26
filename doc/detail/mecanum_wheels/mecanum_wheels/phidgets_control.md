@@ -244,9 +244,11 @@ sequenceDiagram
 ## Performance Characteristics
 
 ### Control Frequency
-- **Timer:** 30 Hz
-- **Motor data rate:** 10 Hz
-- **Motor data interval:** 100ms
+- **Timer:** 30 Hz (phidgets_control.py:49)
+- **Motor data rate:** 10 Hz (phidgets_control.py:66)
+- **Motor data interval:** 100ms (phidgets_control.py:65)
+
+**Clarification on Frequency Mismatch:** The control loop runs at 30 Hz (timer callback frequency), while motor encoder data is updated at 10 Hz. This design allows the PID controller to run more frequently than the sensor update rate, providing smoother control output. The PID computations at 30 Hz use the most recent encoder readings available, which are refreshed every 100ms (10 Hz). This oversampling approach helps reduce control jitter and improves response time.
 
 ### Latency
 - **Sensor-to-actuator:** ~40ms (motor data interval + processing)
