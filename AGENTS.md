@@ -121,9 +121,9 @@ Documentation language requirements vary by type:
 - **Japanese**: Translation with `-ja` suffix (e.g., `feature-ja.md`)
 
 **Detailed Technical Documentation** (`doc/detail/`):
-- **English**: Required for all detailed implementation documentation
-- **Japanese**: Optional (translations welcomed but not mandatory)
-- Rationale: Detailed technical documentation is primarily for developers who typically read English technical documentation. The significant volume of detailed docs makes translation effort substantial while providing limited additional value.
+- **Required** in both English and Japanese
+- **English**: Primary documentation (e.g., `implementation.md`)
+- **Japanese**: Translation with `-ja` suffix (e.g., `implementation-ja.md`)
 
 **Project-level Documentation** (e.g., `AGENTS.md`, `README.md`):
 - **Required** in both English and Japanese
