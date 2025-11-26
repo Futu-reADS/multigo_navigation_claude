@@ -113,9 +113,21 @@ Each ROS2 package in `src/` typically contains:
 ## Documentation Standards
 
 ### Language Requirements
-All documentation must be provided in **both English and Japanese**:
-- **English**: Primary documentation (e.g., `AGENTS.md`, `feature.md`)
-- **Japanese**: Translation with `-ja` suffix (e.g., `AGENTS-ja.md`, `feature-ja.md`)
+Documentation language requirements vary by type:
+
+**Feature Documentation** (`doc/feature/`):
+- **Required** in both English and Japanese
+- **English**: Primary documentation (e.g., `feature.md`)
+- **Japanese**: Translation with `-ja` suffix (e.g., `feature-ja.md`)
+
+**Detailed Technical Documentation** (`doc/detail/`):
+- **English**: Required for all detailed implementation documentation
+- **Japanese**: Optional (translations welcomed but not mandatory)
+- Rationale: Detailed technical documentation is primarily for developers who typically read English technical documentation. The significant volume of detailed docs makes translation effort substantial while providing limited additional value.
+
+**Project-level Documentation** (e.g., `AGENTS.md`, `README.md`):
+- **Required** in both English and Japanese
+- Follow the same `-ja` suffix convention
 
 ### File Naming Convention
 ```
