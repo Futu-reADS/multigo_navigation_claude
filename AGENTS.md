@@ -123,6 +123,11 @@ document.md         # English version
 document-ja.md      # Japanese version (日本語版)
 ```
 
+### Character Encoding
+- **All documentation and source code must use UTF-8 encoding unless otherwise specified**
+- When saving files, use UTF-8 (without BOM)
+- It is recommended to set UTF-8 as the default encoding in your editor settings
+
 ### Documentation File Organization
 
 ```mermaid
